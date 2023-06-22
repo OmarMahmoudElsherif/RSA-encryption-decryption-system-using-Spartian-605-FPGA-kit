@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+clk_modifier instance_name (
+    .clk(clk), 
+    .rst(rst), 
+    .clk_out(clk_out)
+    );
+
+

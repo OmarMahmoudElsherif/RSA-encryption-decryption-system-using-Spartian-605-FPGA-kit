@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+counter instance_name (
+    .key(key), 
+    .start(start), 
+    .clk(clk), 
+    .count(count)
+    );
+
+

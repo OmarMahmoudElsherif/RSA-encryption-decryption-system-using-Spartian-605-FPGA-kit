@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj RSA_project -o /home/ise/Shared_Virtual_box/RSA_project/RSA_project/modulo.tfi -lib work /home/ise/Shared_Virtual_box/RSA_project/RSA_project//modulo.v -module modulo -template /opt/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 

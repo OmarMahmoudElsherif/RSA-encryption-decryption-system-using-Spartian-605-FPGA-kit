@@ -1,0 +1,6 @@
+verilog work "ipcore_dir/gen_clock.v"
+verilog work "multilpier.v"
+verilog work "modulo.v"
+verilog work "counter.v"
+verilog work "clk_modifier.v"
+verilog work "top.v"

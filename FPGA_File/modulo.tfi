@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+modulo instance_name (
+    .Mult_result(Mult_result), 
+    .N(N), 
+    .valid(valid), 
+    .Result(Result)
+    );
+
+

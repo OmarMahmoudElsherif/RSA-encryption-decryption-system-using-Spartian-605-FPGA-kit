@@ -1,0 +1,711 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc6slx45t-3-fgg484
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/ipcore_dir/gen_clock.v" into library work
+Parsing module <gen_clock>.
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/multilpier.v" into library work
+Parsing module <mult>.
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/modulo.v" into library work
+Parsing module <modulo>.
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/counter.v" into library work
+Parsing module <counter>.
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/clk_modifier.v" into library work
+Parsing module <clk_modifier>.
+Analyzing Verilog file "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v" into library work
+Parsing module <top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <top>.
+
+Elaborating module <gen_clock>.
+
+Elaborating module <IBUFGDS>.
+
+Elaborating module <DCM_SP(CLKDV_DIVIDE=10.0,CLKFX_DIVIDE=20,CLKFX_MULTIPLY=2,CLKIN_DIVIDE_BY_2="TRUE",CLKIN_PERIOD=5.0,CLKOUT_PHASE_SHIFT="NONE",CLK_FEEDBACK="1X",DESKEW_ADJUST="SYSTEM_SYNCHRONOUS",PHASE_SHIFT=0,STARTUP_WAIT="FALSE")>.
+WARNING:HDLCompiler:1127 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/ipcore_dir/gen_clock.v" Line 130: Assignment to locked_int ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/ipcore_dir/gen_clock.v" Line 131: Assignment to status_int ignored, since the identifier is never used
+
+Elaborating module <BUFG>.
+
+Elaborating module <clk_modifier>.
+WARNING:HDLCompiler:413 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/clk_modifier.v" Line 32: Result of 25-bit expression is truncated to fit in 24-bit target.
+
+Elaborating module <counter(WIDTH=6)>.
+WARNING:HDLCompiler:413 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/counter.v" Line 17: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:189 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v" Line 41: Size mismatch in connection of port <count>. Formal port size is 6-bit while actual signal size is 12-bit.
+
+Elaborating module <mult(WIDTH=6)>.
+WARNING:HDLCompiler:189 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v" Line 47: Size mismatch in connection of port <counter>. Formal port size is 6-bit while actual signal size is 12-bit.
+WARNING:HDLCompiler:189 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v" Line 52: Size mismatch in connection of port <mult_Result>. Formal port size is 12-bit while actual signal size is 1-bit.
+
+Elaborating module <modulo(WIDTH=6)>.
+WARNING:HDLCompiler:1127 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/modulo.v" Line 14: Assignment to N ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v" Line 57: Size mismatch in connection of port <Mult_result>. Formal port size is 12-bit while actual signal size is 1-bit.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <top>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.v".
+        BUS_WIDTH = 6
+    Summary:
+	no macro.
+Unit <top> synthesized.
+
+Synthesizing Unit <gen_clock>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/ipcore_dir/gen_clock.v".
+    Summary:
+	no macro.
+Unit <gen_clock> synthesized.
+
+Synthesizing Unit <clk_modifier>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/clk_modifier.v".
+    Found 1-bit register for signal <clk_out>.
+    Found 24-bit register for signal <internal>.
+    Found 24-bit adder for signal <internal[23]_GND_6_o_add_1_OUT> created at line 32.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+Unit <clk_modifier> synthesized.
+
+Synthesizing Unit <counter>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/counter.v".
+        WIDTH = 6
+    Found 6-bit register for signal <count>.
+    Found 6-bit subtractor for signal <GND_7_o_GND_7_o_sub_4_OUT<5:0>> created at line 17.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <counter> synthesized.
+
+Synthesizing Unit <mult>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/multilpier.v".
+        WIDTH = 6
+    Found 7-bit subtractor for signal <GND_14_o_GND_14_o_sub_2_OUT> created at line 16.
+    Found 6x6-bit multiplier for signal <base[5]_feedback_mult[5]_MuLt_3_OUT> created at line 17.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mult_Result<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <valid>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  13 Latch(s).
+	inferred   6 Multiplexer(s).
+Unit <mult> synthesized.
+
+Synthesizing Unit <modulo>.
+    Related source file is "/home/ise/Shared_Virtual_box/RSA_project/RSA_project/modulo.v".
+        WIDTH = 6
+WARNING:Xst:2999 - Signal 'memory', unconnected in block 'modulo', is tied to its initial value.
+    Found 4096x6-bit single-port Read Only RAM <Mram_memory> for signal <memory>.
+    Found 6-bit register for signal <Result>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   6 D-type flip-flop(s).
+Unit <modulo> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4096x6-bit single-port Read Only RAM                  : 1
+# Multipliers                                          : 1
+ 6x6-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 3
+ 24-bit adder                                          : 1
+ 6-bit subtractor                                      : 1
+ 7-bit subtractor                                      : 1
+# Registers                                            : 4
+ 1-bit register                                        : 1
+ 24-bit register                                       : 1
+ 6-bit register                                        : 2
+# Latches                                              : 13
+ 1-bit latch                                           : 13
+# Multiplexers                                         : 7
+ 1-bit 2-to-1 multiplexer                              : 6
+ 6-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <clk_modifier>.
+The following registers are absorbed into counter <internal>: 1 register on signal <internal>.
+Unit <clk_modifier> synthesized (advanced).
+
+Synthesizing (advanced) Unit <counter>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <modulo>.
+INFO:Xst:3226 - The RAM <Mram_memory> will be implemented as a BLOCK RAM, absorbing the following register(s): <Result>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4096-word x 6-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <valid>         | low      |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <Mult_result>   |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <Result>        |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <modulo> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4096x6-bit single-port block Read Only RAM            : 1
+# Multipliers                                          : 1
+ 6x6-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 1
+ 7-bit subtractor                                      : 1
+# Counters                                             : 2
+ 24-bit up counter                                     : 1
+ 6-bit down counter                                    : 1
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+# Multiplexers                                         : 6
+ 1-bit 2-to-1 multiplexer                              : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
+   incompatible with the Spartan6 architecture. The two primary causes of this is
+   either a register or latch described with both an asynchronous set and
+   asynchronous reset, or a register or latch described with an asynchronous
+   set or reset which however has an initialization value of the opposite 
+   polarity (i.e. asynchronous reset with an initialization value of 1).
+    While this circuit can be built, it creates a sub-optimal implementation
+   in terms of area, power and performance. For a more optimal implementation
+   Xilinx highly recommends one of the following:
+
+          1) Remove either the set or reset from all registers and latches
+             if not needed for required functionality
+          2) Modify the code in order to produce a synchronous set
+             and/or reset (both is preferred)
+          3) Ensure all registers have the same initialization value as the
+             described asynchronous set or reset polarity
+          4) Use the -async_to_sync option to transform the asynchronous
+             set/reset to synchronous operation
+             (timing simulation highly recommended when using this option)
+
+  Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
+
+  List of register instances with asynchronous set and reset:
+    valid in unit <mult>
+
+
+Optimizing unit <top> ...
+
+Optimizing unit <mult> ...
+WARNING:Xst:2677 - Node <multiplier/mult_Result_2> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_3> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_1> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_7> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <multiplier/mult_Result_10> of sequential type is unconnected in block <top>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 0.
+Latch multiplier/valid has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 31
+ Flip-Flops                                            : 31
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 98
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 23
+#      LUT2                        : 4
+#      LUT3                        : 4
+#      LUT4                        : 1
+#      LUT5                        : 4
+#      LUT6                        : 10
+#      MUXCY                       : 23
+#      VCC                         : 1
+#      XORCY                       : 24
+# FlipFlops/Latches                : 34
+#      FD                          : 2
+#      FDE                         : 4
+#      FDR                         : 24
+#      FDRE                        : 1
+#      LD                          : 3
+# RAMS                             : 2
+#      RAMB16BWER                  : 1
+#      RAMB8BWER                   : 1
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 17
+#      IBUF                        : 9
+#      IBUFGDS                     : 1
+#      OBUF                        : 7
+# DCMs                             : 1
+#      DCM_SP                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45tfgg484-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              33  out of  54576     0%  
+ Number of Slice LUTs:                   49  out of  27288     0%  
+    Number used as Logic:                49  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     49
+   Number with an unused Flip Flop:      16  out of     49    32%  
+   Number with an unused LUT:             0  out of     49     0%  
+   Number of fully used LUT-FF pairs:    33  out of     49    67%  
+   Number of unique control sets:         6
+
+IO Utilization: 
+ Number of IOs:                          23
+ Number of bonded IOBs:                  18  out of    296     6%  
+    IOB Flip Flops/Latches:               1
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    116     1%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------------------------------------------------+----------------------------------+-------+
+Clock Signal                                                                 | Clock buffer(FF name)            | Load  |
+-----------------------------------------------------------------------------+----------------------------------+-------+
+clk_n                                                                        | DCM_SP:CLKFX                     | 25    |
+clk_mod_inst/clk_out                                                         | NONE(counter_inst/count_2)       | 8     |
+multiplier/GND_14_o_GND_14_o_OR_64_o(multiplier/GND_14_o_GND_14_o_OR_64_o1:O)| NONE(*)(multiplier/mult_Result_0)| 1     |
+multiplier/valid_G(multiplier/valid_G:O)                                     | NONE(*)(multiplier/valid)        | 2     |
+-----------------------------------------------------------------------------+----------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 3.186ns (Maximum Frequency: 313.858MHz)
+   Minimum input arrival time before clock: 4.202ns
+   Maximum output required time after clock: 5.037ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_n'
+  Clock period: 0.433ns (frequency: 2306.991MHz)
+  Total number of paths / destination ports: 925 / 51
+-------------------------------------------------------------------------
+Delay:               4.335ns (Levels of Logic = 2)
+  Source:            clk_mod_inst/internal_11 (FF)
+  Destination:       clk_mod_inst/internal_0 (FF)
+  Source Clock:      clk_n rising 0.1X
+  Destination Clock: clk_n rising 0.1X
+
+  Data Path: clk_mod_inst/internal_11 to clk_mod_inst/internal_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.981  clk_mod_inst/internal_11 (clk_mod_inst/internal_11)
+     LUT6:I0->O            3   0.203   0.898  clk_mod_inst/GND_6_o_GND_6_o_equal_4_o<23>1 (clk_mod_inst/GND_6_o_GND_6_o_equal_4_o<23>)
+     LUT5:I1->O           24   0.203   1.172  clk_mod_inst/Mcount_internal_val241 (clk_mod_inst/Mcount_internal_val)
+     FDR:R                     0.430          clk_mod_inst/internal_0
+    ----------------------------------------
+    Total                      4.335ns (1.283ns logic, 3.052ns route)
+                                       (29.6% logic, 70.4% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_mod_inst/clk_out'
+  Clock period: 3.186ns (frequency: 313.858MHz)
+  Total number of paths / destination ports: 54 / 10
+-------------------------------------------------------------------------
+Delay:               3.186ns (Levels of Logic = 2)
+  Source:            counter_inst/count_4 (FF)
+  Destination:       counter_inst/count_2 (FF)
+  Source Clock:      clk_mod_inst/clk_out rising
+  Destination Clock: clk_mod_inst/clk_out rising
+
+  Data Path: counter_inst/count_4 to counter_inst/count_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              6   0.447   0.745  counter_inst/count_4 (counter_inst/count_4)
+     LUT2:I1->O            1   0.205   0.580  counter_inst/_n0019_inv_SW0 (N01)
+     LUT6:I5->O            4   0.205   0.683  counter_inst/_n0019_inv (counter_inst/_n0019_inv)
+     FDE:CE                    0.322          counter_inst/count_2
+    ----------------------------------------
+    Total                      3.186ns (1.179ns logic, 2.007ns route)
+                                       (37.0% logic, 63.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_n'
+  Total number of paths / destination ports: 25 / 25
+-------------------------------------------------------------------------
+Offset:              3.988ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       clk_mod_inst/internal_0 (FF)
+  Destination Clock: clk_n rising 0.1X
+
+  Data Path: rst to clk_mod_inst/internal_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.222   0.961  rst_IBUF (rst_IBUF)
+     LUT5:I0->O           24   0.203   1.172  clk_mod_inst/Mcount_internal_val241 (clk_mod_inst/Mcount_internal_val)
+     FDR:R                     0.430          clk_mod_inst/internal_0
+    ----------------------------------------
+    Total                      3.988ns (1.855ns logic, 2.133ns route)
+                                       (46.5% logic, 53.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_mod_inst/clk_out'
+  Total number of paths / destination ports: 16 / 10
+-------------------------------------------------------------------------
+Offset:              4.202ns (Levels of Logic = 3)
+  Source:            start (PAD)
+  Destination:       counter_inst/count_2 (FF)
+  Destination Clock: clk_mod_inst/clk_out rising
+
+  Data Path: start to counter_inst/count_2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   1.222   0.987  start_IBUF (start_IBUF)
+     LUT2:I0->O            1   0.203   0.580  counter_inst/_n0019_inv_SW0 (N01)
+     LUT6:I5->O            4   0.205   0.683  counter_inst/_n0019_inv (counter_inst/_n0019_inv)
+     FDE:CE                    0.322          counter_inst/count_2
+    ----------------------------------------
+    Total                      4.202ns (1.952ns logic, 2.250ns route)
+                                       (46.5% logic, 53.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'multiplier/GND_14_o_GND_14_o_OR_64_o'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              2.347ns (Levels of Logic = 2)
+  Source:            start (PAD)
+  Destination:       multiplier/mult_Result_0 (LATCH)
+  Destination Clock: multiplier/GND_14_o_GND_14_o_OR_64_o falling
+
+  Data Path: start to multiplier/mult_Result_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   1.222   0.883  start_IBUF (start_IBUF)
+     LUT3:I2->O            1   0.205   0.000  multiplier/Mmux_mult_Result[11]_GND_14_o_mux_5_OUT<0>11 (multiplier/mult_Result[11]_GND_14_o_mux_5_OUT<0>)
+     LD:D                      0.037          multiplier/mult_Result_0
+    ----------------------------------------
+    Total                      2.347ns (1.464ns logic, 0.883ns route)
+                                       (62.4% logic, 37.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'multiplier/valid_G'
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Offset:              2.449ns (Levels of Logic = 2)
+  Source:            start (PAD)
+  Destination:       multiplier/valid (LATCH)
+  Destination Clock: multiplier/valid_G falling
+
+  Data Path: start to multiplier/valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            11   1.222   0.987  start_IBUF (start_IBUF)
+     LUT2:I0->O            2   0.203   0.000  multiplier/valid_D (multiplier/valid_D)
+     LD:D                      0.037          multiplier/valid
+    ----------------------------------------
+    Total                      2.449ns (1.462ns logic, 0.987ns route)
+                                       (59.7% logic, 40.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_mod_inst/clk_out'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              5.037ns (Levels of Logic = 1)
+  Source:            moduloo/Mram_memory1 (RAM)
+  Destination:       result<0> (PAD)
+  Source Clock:      clk_mod_inst/clk_out rising
+
+  Data Path: moduloo/Mram_memory1 to result<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAMB16BWER:CLKA->DOA0    2   1.850   0.616  moduloo/Mram_memory1 (result_0_OBUF)
+     OBUF:I->O                 2.571          result_0_OBUF (result<0>)
+    ----------------------------------------
+    Total                      5.037ns (4.421ns logic, 0.616ns route)
+                                       (87.8% logic, 12.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'multiplier/valid_G'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              3.648ns (Levels of Logic = 1)
+  Source:            multiplier/valid_1 (LATCH)
+  Destination:       valid (PAD)
+  Source Clock:      multiplier/valid_G falling
+
+  Data Path: multiplier/valid_1 to valid
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q               1   0.498   0.579  multiplier/valid_1 (multiplier/valid_1)
+     OBUF:I->O                 2.571          valid_OBUF (valid)
+    ----------------------------------------
+    Total                      3.648ns (3.069ns logic, 0.579ns route)
+                                       (84.1% logic, 15.9% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_mod_inst/clk_out
+------------------------------------+---------+---------+---------+---------+
+                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------------------+---------+---------+---------+---------+
+clk_mod_inst/clk_out                |    3.186|         |         |         |
+multiplier/GND_14_o_GND_14_o_OR_64_o|         |    1.464|         |         |
+multiplier/valid_G                  |         |    2.119|         |         |
+------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_n
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_n          |    4.335|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock multiplier/GND_14_o_GND_14_o_OR_64_o
+--------------------+---------+---------+---------+---------+
+                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------+---------+---------+---------+---------+
+clk_mod_inst/clk_out|         |         |    2.811|         |
+--------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock multiplier/valid_G
+--------------------+---------+---------+---------+---------+
+                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock        |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------+---------+---------+---------+---------+
+clk_mod_inst/clk_out|         |         |    2.632|         |
+--------------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 23.35 secs
+ 
+--> 
+
+
+Total memory usage is 484220 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   35 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

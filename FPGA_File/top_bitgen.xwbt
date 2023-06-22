@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.ncd
+OUTFILE=/home/ise/Shared_Virtual_box/RSA_project/RSA_project/top.bit
+FAMILY=Spartan6
+PART=xc6slx45t-3fgg484
+WORKINGDIR=/home/ise/Shared_Virtual_box/RSA_project/RSA_project
+LICENSE=WebPack
+USER_INFO=8416_11442_1478797146_620
