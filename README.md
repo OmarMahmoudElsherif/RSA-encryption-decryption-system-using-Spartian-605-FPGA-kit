@@ -6,4 +6,4 @@ public key, respectively. This provides added data security but adds the complex
 generating the private and public keys between sender and receiver.
 
 # Encryption :
-- [encrypto_data = data^](https://latex.codecogs.com/gif.latex?data%5E%7BKey%7D%20.%20mod%7BN%7D)https://latex.codecogs.com/gif.latex?data%5E%7BKey%7D%20.%20mod%7BN%7D
+- [encrypto_data = data^](https://latex.codecogs.com/gif.latex?data%5E%7BKey%7D%20.%20mod%7BN%7D)https://latex.codecogs.com/gif.latex?data%5E%7BKey%7D%20.%20mod%7BN%7D)
